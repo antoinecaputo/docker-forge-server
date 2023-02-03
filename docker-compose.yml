@@ -2,7 +2,7 @@ version: '3.8'
 name: forge-server
 services:
   server:
-    container_name: jdk-vm
+    container_name: vm
     image: eclipse-temurin:17-jdk-focal
     #command : ["tail", "-f", "/dev/null"]
     #command: [java, -version]
@@ -13,9 +13,7 @@ services:
         - 25565
         - 25575
     ports:
-        - "25565:25565"
-        - "25575:25575"
+        - "25585:25565"
+        - "25595:25575"
     volumes:
       - ./server:/server
-
-    
