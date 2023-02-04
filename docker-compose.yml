@@ -3,11 +3,14 @@ name: forge-server
 services:
   server:
     container_name: vm
-    image: eclipse-temurin:17-jdk-focal
+    image: eclipse-temurin:19-jdk-focal
     #command : ["tail", "-f", "/dev/null"]
     #command: [java, -version]
     working_dir: /server
     command: ./run.sh nogui
+    # Run django server
+    #command: sh -c "source venv/bin/activate && python /dashboard/manage.py runserver 0.0.0.0:8000"
+
     # restart: on-failure
     expose:
         - 25565
